@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    background-color: aqua;
+}
+
+header {
+    max-width: 1200px;
+    height: 50px;
+    background-color: black;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    background-color: gray;
+}
+
+section {
+    margin: auto;
+    height: auto;
+    display: flex; /* el display flex cambió el display de los article*/
+}
+
+article {
+    background-color: brown;
+}

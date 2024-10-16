@@ -4,3 +4,20 @@ margin 0
 padding 0
 box-sizing: border-box
 }
+
+max-width: 1200px
+
+ 3 colores maqueta: 
+    base
+    color cuadros
+    acento
+
+3 colores letra:
+    titulos
+    parrafos
+    botones
+
+https://talentotech2024.netlify.app/
+
+un div con tarjetas en el index para elegir los productos
+una lista en el carrito con los productos elegidosc
