@@ -17,18 +17,27 @@ header {
 
 nav {
     max-width: 1200px;
-    margin: auto;
     height: 50px;
+    margin: auto;
     display: flex;
     background-color: gray;
 }
 
 section {
-    margin: auto;
+    width: 900px;
     height: auto;
-    display: flex; /* el display flex cambió el display de los article*/
+    margin: auto; /*fijarse responsive*/
+    background-color: blue;
+
+    /*display: flex; /* el display flex cambió el display de los article*/
 }
 
 article {
+    display: inline-block; /*¿por que entraron?*/
     background-color: brown;
+}
+
+img {
+    width: 200px;
+    height: 200px;
 }
