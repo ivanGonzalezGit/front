@@ -21,3 +21,16 @@ https://talentotech2024.netlify.app/
 
 un div con tarjetas en el index para elegir los productos
 una lista en el carrito con los productos elegidosc
+
+iconos: <link href="/website/css/uicons-bold-rounded.css"
+rel="stylesheet">
+
+insta <i class="fa-brands fa-instagram"></i>
+
+whatsapp <i class="fa-brands fa-whatsapp"></i>
+
+hamburguesa </i> <i class="fa-solid fa-bars"></i>
+
+carrito <i class="fa-solid fa-cart-shopping"></i>
+
+Ivan&1402
