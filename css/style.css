@@ -1,17 +1,23 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     max-width: 1200px;
+    height: auto;
     margin: auto;
     background-color: aqua;
 }
 
 header {
     max-width: 1200px;
-    height: 50px;
+    height: 70px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
     text-align: center;
     color: white;
@@ -20,8 +26,11 @@ header {
 nav {
     max-width: 1200px;
     height: 50px;
-    margin: auto;
+    padding-right: 30px;
     display: flex;
+    /*flex-direction: column;*/
+    justify-content: right;
+    align-items: center; /*vertical*/
     background-color: gray;
 }
 
@@ -30,9 +39,11 @@ nav {
 }
 
 #hambur {
-    /*display: none;*/
+    display: flex;
     width: 50px;
     height: 50px;
+    justify-content: center;
+    align-items: center;
     background-color: green;
 }
 
@@ -49,10 +60,13 @@ ul {
 }
 
 main {
-    width: auto;
+    width: 100%;
     height: auto;
-    /*display: flex;*/
-    text-align: center; /* revisar*/
+    margin: 20px 0px 50px;
+    padding: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
     background-color: blue;
 }
 
@@ -62,7 +76,6 @@ a {
 }
 
 article {
-    display: inline-block; /*¿por que entraron?*/
     margin: 5px;
     background-color: brown;
 }
@@ -72,7 +85,13 @@ img {
     height: 150px;
 }
 
+.mapa {
+    display: flex;
+    align-items: center;
+}
 #mapa {
     width: 300px;
     height: 300px;
+    margin: auto;
 }
+
