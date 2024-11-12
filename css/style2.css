@@ -2,3 +2,22 @@ img {
     width: 50px;
     height: 50px;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+th {/* el table data se tiene que adaptar al contenido de la descripción*/
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+
+}
+
+td {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
