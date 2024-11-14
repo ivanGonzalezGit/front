@@ -16,49 +16,20 @@
 <body>
     <div class="container">
         <header>
-            <style>
-                .grid-container{
-                    width: 100%;
-                    height: 200px;
-                    display: grid;
-                    grid-template-columns:50px auto 250px;
-                
-                    background-color: greenyellow;
-                }
-
-                .grid-item{
-                    width: 50px;
-                    height: 50px;
-                    background-color: blue;
-                    border: 2px solid black;
-                }
-            </style>
-
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>       
+            <h1>Todo Baratito...</h1>
         </header>
 
-        <!-- <nav class="grid-container">
-            <div id="hambur" class="grid-item"><i class="fa-solid fa-bars"></i></div>
-            ///<div id="divHambur">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="formulario.html">Contacto</a></li>
-                    <li><a href="carrito.html">Carrito</a></li>
-                </ul>
-            </div>////
-            <h1>Todo Baratito</h1>-->
-            <!-- <div class="grid-item botonesNav" >
-                <div class="nav"><a href="index.html">Inicio</a></div>
-                <div class="nav"><a href="productos.html">Productos</a></div>
-                <div class="nav"><a href="formulario.html">Contacto</a></div>
-                <div class="nav"><a href="carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></div>        
+        <nav class="contenedorNav">
+            <div id="hambur"><i class="fa-solid fa-bars"></i></div>
+
+            <div class="botonesNav">
+                <div class="navButtons"><a href="index.html">Inicio</a></div>
+                <div class="navButtons"><a href="productos.html">Productos</a></div>
+                <div class="navButtons"><a href="resenia.html">Reseña</a></div>
+                <div class="navButtons"><a href="formulario.html">Contacto</a></div>
+                <div class="navButtons"><a href="carrito.html">Carrito <i class="fa-solid fa-cart-shopping"></i></a></div>        
             </div>
-        </nav>-->
+        </nav>
 
             <div class="pasador">
                 <div id="carouselExample" class="carousel slide">
@@ -84,7 +55,7 @@
                 </div>
             </div>
 
-            <h1>Ofertas Todo Baratito...</h1>
+            <h1 id="oferta">Ofertas Todo Baratito...</h1>
         <main>
             <div id="contenedorMain">
                 <article>

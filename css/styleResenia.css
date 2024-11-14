@@ -1,0 +1,9 @@
+.grid-container{
+    width: 80%;
+    height: auto;
+    grid-template-columns: 300px auto;
+}
+
+.grid-item{
+
+}

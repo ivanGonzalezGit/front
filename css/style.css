@@ -8,7 +8,7 @@ body {
     max-width: 1200px;
     height: auto;
     margin: auto;
-    background-color: aqua;
+    background-color: #f4f6f6;
 }
 
 header {
@@ -18,24 +18,23 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #148f77;
     text-align: center;
-    color: white;
 }
 
 nav {
     max-width: 1200px;
     height: 50px;
-    padding-right: 30px;
+    padding-right: 10px;
     display: flex;
-
-    justify-content: space-between;
+    justify-content: end;
     align-items: center; /*vertical*/
-    background-color: gray;
+    background-color: #148f77;
 }
 
-.nav {
-    padding: 3px;
+.contenedorNav{
+    display: flex;
+    align-items: end;
 }
 
 .botonesNav {
@@ -43,36 +42,38 @@ nav {
     flex-direction: row;
 }
 
-#hambur {
-    display: flex;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    background-color: green;
+.navButtons{
+    padding: 5px 20px 5px 20px;
+    margin: 5px;
+    background-color: #196f3d;
+    border-radius: 10px;
 }
 
-/*#divHambur {
+#hambur {
     display: none;
-    width: 200px;
-    height: 50px;
-    background-color: blueviolet;
-}*/
+}
 
 ul {
     list-style: none;
     margin: 10px;
 }
+
 h1 {
     padding: 10px;
     text-align: center;
+    color: #eaeded;
+}
+
+#oferta{
+background-color: #fcf3cf;
+color:#148f77;
 }
 main {
     margin:auto;
     padding: 50px 0px 70px;
     width: 100%;
     height: auto;
-    background-color: chartreuse;
+    background-color: #8dab74;
 }
 #contenedorMain{
     width: 80%;
@@ -83,29 +84,35 @@ main {
     justify-content: left;
     flex-wrap: wrap;
     align-content: flex-start;
-    background-color: blue;
+    background-color: #8dab74;
 }
 
 article {
     display: flex;
     flex-direction: column;
     margin: 5px;
-    background-color: brown;
+    background-color:#d5dbdb;
 }
 
 article h3 {
     padding: 3px;
     text-align: center;
-    background-color: blueviolet;
+    color:#148f77;
+    background-color:#d5dbdb;
 }
 
 article span {
     text-align: right;
 }
 
+button{
+    background-color: #196f3d;
+    color: #eaeded;
+}
+
 a {
     text-decoration: none;
-    color: black;
+    color: #eaeded;
 }
 
 img {
@@ -138,6 +145,25 @@ footer {
     padding: 50px;
     justify-content: center;
     align-content: center;
-    background-color: black;
+    background-color: #17202a;
 }
 
+@media (max-width: 700px) {
+
+    #hambur {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        background-color: #196f3d;
+    }
+    .botonesNav{
+        display: none;
+        flex-direction: column;
+    }
+
+    .mapa{
+        display: none;
+    }
+    }
