@@ -123,6 +123,7 @@ img {
 .mapa {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 #mapa {
     width: 300px;
@@ -143,8 +144,9 @@ video {
 footer {
     display: flex;
     padding: 50px;
-    justify-content: center;
+    justify-content:space-around;
     align-content: center;
+    color: #eaeded;
     background-color: #17202a;
 }
 
