@@ -1,4 +1,5 @@
 .grid-container{
+    display: grid;
     width: 80%;
     height: auto;
     grid-template-columns: 300px auto;
