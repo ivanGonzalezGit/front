@@ -37,14 +37,14 @@ nav {
     align-items: end;
 }
 
-.botonesNav {
+#botonesNav {
     display: flex;
     flex-direction: row;
 }
 
 .navButtons{
-    padding: 5px 20px 5px 20px;
-    margin: 5px;
+    padding: 2px 20px 2px 20px;
+    margin: 2px;
     background-color: #196f3d;
     border-radius: 10px;
 }
@@ -160,7 +160,8 @@ footer {
         align-items: center;
         background-color: #196f3d;
     }
-    .botonesNav{
+
+    #botonesNav{
         display: none;
         flex-direction: column;
     }
