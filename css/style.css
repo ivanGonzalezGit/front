@@ -37,6 +37,10 @@ nav {
     align-items: end;
 }
 
+#cerrarMenuVertical{
+    display: none;
+}
+
 #botonesNav {
     display: flex;
     flex-direction: row;
@@ -47,10 +51,6 @@ nav {
     margin: 2px;
     background-color: #196f3d;
     border-radius: 10px;
-}
-
-#hambur {
-    display: none;
 }
 
 ul {
@@ -151,6 +151,13 @@ footer {
 }
 
 @media (max-width: 700px) {
+
+    nav {
+        height: auto;
+    }
+    #cerrarMenuVertical{
+        display: inline;
+    }
 
     #hambur {
         display: flex;
