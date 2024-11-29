@@ -182,8 +182,8 @@ footer {
     #cerrarMenuVertical{
         margin:0;
         padding: 0;
-        margin-right: 2px;
-        background-color: rgb(235, 91, 91);
+        border: 1px solid #e74848;
+        background-color: #eb5b5b;
         display: flex;
         justify-content: center;
         align-items: center;

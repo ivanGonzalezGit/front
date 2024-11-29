@@ -18,14 +18,17 @@ function recomponerHamburguesa()
 
 function recomponerNavPantallaGrande(){
     var contenedorBotones = document.getElementById("botonesNav");
+    var hamburguesa = document.getElementById("hambur");
 
     if(window.innerWidth>700)
     {
         contenedorBotones.style.display="flex";
+        hamburguesa.style.display = "none";
     }
     else
     {
         contenedorBotones.style.display="none";
+        hamburguesa.style.display = "flex";
     }
 }
 
