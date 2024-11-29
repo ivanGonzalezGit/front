@@ -41,6 +41,10 @@ nav {
     display: none;
 }
 
+#rayitas{
+    display: none;
+}
+
 #botonesNav {
     display: flex;
     flex-direction: row;
@@ -68,6 +72,7 @@ h1 {
 background-color: #fcf3cf;
 color:#148f77;
 }
+
 main {
     margin:auto;
     padding: 50px 0px 70px;
@@ -75,6 +80,7 @@ main {
     height: auto;
     background-color: #8dab74;
 }
+
 #contenedorMain{
     width: 80%;
     margin: auto;
@@ -125,16 +131,19 @@ img {
     align-items: center;
     flex-direction: column;
 }
+
 #mapa {
     width: 300px;
     height: 300px;
     margin: auto;
 }
+
 #video{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 video {
     width: 500px;
     height: auto;
@@ -155,19 +164,37 @@ footer {
     nav {
         height: auto;
     }
-    #cerrarMenuVertical{
-        display: inline;
-    }
 
     #hambur {
         display: flex;
         width: 50px;
         height: 50px;
+        border-radius: 10px;
         justify-content: center;
         align-items: center;
         background-color: #196f3d;
     }
 
+    #rayitas{
+        display: block;
+    }
+
+    #cerrarMenuVertical{
+        margin:0;
+        padding: 0;
+        margin-right: 2px;
+        background-color: rgb(235, 91, 91);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+    }
+
+    .navButtons:first-child {
+        align-self: flex-end; /* Mueve el primer hijo hacia la derecha */
+    }
+    
     #botonesNav{
         display: none;
         flex-direction: column;
@@ -176,4 +203,4 @@ footer {
     .mapa{
         display: none;
     }
-    }
+}
