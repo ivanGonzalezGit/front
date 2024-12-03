@@ -24,3 +24,11 @@ main {
     padding: 10px;
     text-align: left;
 }
+
+.quitar{
+    padding: 2px 10px 2px 10px;
+    margin: 2px;
+    border: 1px solid #e74848;
+    background-color: #eb5b5b;
+    border-radius: 5px;
+}
