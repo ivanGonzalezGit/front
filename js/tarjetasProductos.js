@@ -1,5 +1,10 @@
 var contenedor = document.getElementById("contenedorMain");
 
+function agregarProducto()
+{
+    alert("Usted agregó el producto a su carrito exitosamente");
+}
+
 for (var i=1;i<13;i++)
 {
     var contenido = document.createElement("article");
@@ -10,7 +15,9 @@ for (var i=1;i<13;i++)
                                     <span>Precio</span>
                                     <span>$1000</span>
                                 </div>
-                                <button onclick="agregarProducto()" class="navButtons">Agregar al carrito</button>`;
+                                <button class="agregarAlCarrito">Agregar al carrito</button>`;
 
     contenedor.appendChild(contenido);
 }
+
+document.querySelectorAll('.agregarAlCarrito').forEach(button => button.addEventListener('click', agregarProducto));

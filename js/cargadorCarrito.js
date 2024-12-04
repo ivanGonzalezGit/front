@@ -1,15 +1,5 @@
 
-var productos = [
-    {'id': 1, 'nombre': 'papaya', 'precio': 2000},
-    {'id': 2, 'nombre': 'manzana', 'precio': 1500},
-    {'id': 3, 'nombre': 'banano', 'precio': 1000}
-];
-
-console.log(productos);
-
-var carrito = [[]]; // [[]] para indicar que es un arreglo vacío
-agregarProducto(carrito);
-function agregarProducto(carr)
+function agregarProducto()
 {
     alert("Usted agregó el producto a su carrito exitosamente");
     var producto = 5;
@@ -48,7 +38,7 @@ function mostrarItemCarrito(id, img, nombre, precio)
                                     <div class="grid-item"><img src="${img}"></div>
                                     <div class="grid-item">${nombre}</div>
                                     <div class="grid-item">$${precio}</div>
-                                    <div class="grid-item"><button onclick="quitarProducto()" class="quitar">Quitar</button></div>`;
+                                    <div class="grid-item"><button onclick="quitarProducto" class="quitar">Quitar</button></div>`;
             contenedorCarrito.appendChild(carrito);
         }
 }
@@ -67,7 +57,3 @@ function totalPrecio(precioTotal)
 
     contenedorCarrito.appendChild(carrito);
 }
-
-encabezadoDeGrilla();
-mostrarItemCarrito(1, "img/foto_1.jpg", "Ciervo Moteado", 100000);
-totalPrecio(100000);
