@@ -2,28 +2,9 @@ var contenedor = document.getElementById("contenedorMain");
 
 function agregarProducto()
 {
-    alert("Usted agregó el producto a su carrito exitosamente");
-}
+  /* cargar al sessionStorage*/
 
-for (var i=1;i<6;i++)
-{
-    var contenido = document.createElement("article");
-
-    contenido.innerHTML = `<h3>nombre</h3>
-                                <div id= "idProducto"></div>
-                                <img src="img/foto_${i}.jpg" alt="Foto Producto${i}"/>
-                                <div class="precio">
-                                    <span>Precio</span>
-                                    <span>$1000</span>
-                                </div>
-                                <button class="AgregarAlCarrito">Agregar al carrito</button>`;
-    contenedor.appendChild(contenido);
-}
-
-document.querySelectorAll('.AgregarAlCarrito').forEach(button => button.addEventListener('click', agregarProducto));
-
-
-/*<article>
+  /*<article>
   <img src="producto.jpg" alt="Producto">
   <button class="add-to-cart" data-product-id="123">Agregar al carrito</button>
 </article>
@@ -43,3 +24,26 @@ document.querySelectorAll('.AgregarAlCarrito').forEach(button => button.addEvent
     // Aquí puedes manejar tu lógica con sessionStorage
   }
 </script>*/
+
+  
+  alert("Usted agregó el producto a su carrito exitosamente");
+}
+
+fetch('https://fakestoreapi.com/products')
+.then(res=>res.json())
+.then(data => {for(let i=0; i<5; i++)
+                {
+                  var contenido = document.createElement("article"); 
+                  contenido.innerHTML = `<h3>Producto${i+1}</h3>
+                                      <div id= "${data[i].id}"></div>
+                                      <img src="${data[i].image}" alt="Foto Producto${i}"/>
+                                      <div class="precio">
+                                      <span>Precio</span>
+                                      <span>${data[i].price}</span>
+                                      </div>
+                                      <button class="AgregarAlCarrito">Agregar al carrito</button>`;
+                  contenedor.appendChild(contenido);
+                }
+              })
+
+document.querySelectorAll('.AgregarAlCarrito').forEach(button => button.addEventListener('click', agregarProducto));
