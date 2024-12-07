@@ -1,11 +1,4 @@
 
-function agregarProducto()
-{
-    alert("Usted agregó el producto a su carrito exitosamente");
-    var producto = 5;
-    carr[0].push(producto)
-    console.log(carr[0]);
-}
 
 function quitarProducto()
 {
@@ -38,7 +31,7 @@ function mostrarItemCarrito(id, img, nombre, precio)
                                     <div class="grid-item"><img src="${img}"></div>
                                     <div class="grid-item">${nombre}</div>
                                     <div class="grid-item">$${precio}</div>
-                                    <div class="grid-item"><button onclick="quitarProducto" class="quitar">Quitar</button></div>`;
+                                    <div class="grid-item"><button onclick="quitarProducto()" class="quitar">Quitar</button></div>`;
             contenedorCarrito.appendChild(carrito);
         }
 }
@@ -57,3 +50,15 @@ function totalPrecio(precioTotal)
 
     contenedorCarrito.appendChild(carrito);
 }
+
+function mostrarCarrito()
+{
+    var carrito = JSON.parse(localStorage.getItem('carrito'));
+    console.log(carrito);
+}
+
+function vaciarCarrito()
+{
+    localStorage.clear();
+}
+window.addEventListener('load', encabezadoDeGrilla);

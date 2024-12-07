@@ -1,32 +1,19 @@
 var contenedor = document.getElementById("contenedorMain");
 
-function agregarProducto()
-{
-  /* cargar al sessionStorage*/
+function agregarProducto(event)
+{// creo un producto con forma de json
+  var producto = {
+    id: event.target.getAttribute('data-id'),
+    img: event.target.getAttribute('data-img'),
+    nombre: event.target.getAttribute('data-nombre'),
+    precio: event.target.getAttribute('data-precio')
+  };
 
-  /*<article>
-  <img src="producto.jpg" alt="Producto">
-  <button class="add-to-cart" data-product-id="123">Agregar al carrito</button>
-</article>
+  var carrito = JSON.parse(localStorage.getItem('carrito')) || []; //creo una variable carrito y traigo lo que tiene guardado localStorage. pero como solo se puede grabar texto en localstorage tengo que convertirlo a json para poder trabajarlo como lista o json u objeto. si no tiene nada se le asigna un array vacío.
+  carrito.push(producto); //a carrito lo trato como una lista u objeto y mediante push le agrego un producto.
+  localStorage.setItem('carrito', JSON.stringify(carrito)); // grabo el item de localstorage con el carrito actualizado.
 
-<script>
-  // Manejar el evento de clic
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function () {
-      const productId = this.dataset.productId; // Obtener el ID del producto
-      agregarAlCarrito(productId); // Llamar a la función con el ID
-    });
-  });
-
-  // Ejemplo de función para manejar el carrito
-  function agregarAlCarrito(productId) {
-    console.log(`Producto con ID ${productId} agregado al carrito.`);
-    // Aquí puedes manejar tu lógica con sessionStorage
-  }
-</script>*/
-
-  
-  alert("Usted agregó el producto a su carrito exitosamente");
+  alert('Usted agregó un producto al carrito')
 }
 
 fetch('https://fakestoreapi.com/products')
@@ -34,16 +21,18 @@ fetch('https://fakestoreapi.com/products')
 .then(data => {for(let i=0; i<5; i++)
                 {
                   var contenido = document.createElement("article"); 
-                  contenido.innerHTML = `<h3>Producto${i+1}</h3>
-                                      <div id= "${data[i].id}"></div>
-                                      <img src="${data[i].image}" alt="Foto Producto${i}"/>
-                                      <div class="precio">
-                                      <span>Precio</span>
-                                      <span>${data[i].price}</span>
-                                      </div>
-                                      <button class="AgregarAlCarrito">Agregar al carrito</button>`;
+                  contenido.innerHTML =`<h3>Producto${i+1}</h3>
+                                        <img src="${data[i].image}" alt="Foto Producto${i}"/>
+                                        <div class="precio">
+                                          <span>Precio</span>
+                                          <span>${data[i].price}</span>
+                                        </div>
+                                        <button class="agregarAlCarrito"    onclick="agregarProducto(event)"
+                                          data-id = "${data[i].id}"
+                                          data-img = "${data[i].image}"
+                                          data-nombre = "Producto${i+1}"
+                                          data-precio ="${data[i].price}">Agregar al carrito
+                                      </button>`;
                   contenedor.appendChild(contenido);
                 }
               })
-
-document.querySelectorAll('.AgregarAlCarrito').forEach(button => button.addEventListener('click', agregarProducto));
