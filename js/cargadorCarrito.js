@@ -53,16 +53,22 @@ function totalPrecio()
     {
         precioTotal = precioTotal + parseFloat(carrito[i].precio);
     }
+    var precioTotalTruncado = truncarDec(precioTotal);
     var contenedorCarrito = document.getElementById("cargadorGrillaCarrito");
     var totalCarrito = document.createElement("div");
     totalCarrito.className="grid-container";
     totalCarrito.innerHTML= `    <div class="grid-item"></div>
                             <div class="grid-item"></div>
                             <div class="grid-item"><b>Precio Total</b></div>
-                            <div class="grid-item"><b>$${precioTotal}</b></div>
+                            <div class="grid-item"><b>$${precioTotalTruncado}</b></div>
                             <div class="grid-item"><button class="navButtons">Comprar</button><button onclick="vaciarCarrito()" class="quitar">Vaciar Carrito</button></div>`;
 
     contenedorCarrito.appendChild(totalCarrito);
+}
+
+function truncarDec(num) 
+{
+    return Math.trunc(num * 100) / 100;
 }
 
 function vaciarCarrito() 

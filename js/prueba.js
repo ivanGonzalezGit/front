@@ -1,6 +1,4 @@
 var contenedor = document.getElementById("contenedorMain");
-contenedor.innerHTML = "<div class='spinner-border text-success' role='status'><span class='visually-hidden'>Loading...</span></div>";
-contenedor.style.justifyContent = "center";
 
 function agregarProducto(event)
 {
@@ -35,13 +33,11 @@ function agregarProducto(event)
 
 async function cargarGaleria() {
     try {
+    
         const res = await fetch('https://fakestoreapi.com/products');
         const data = await res.json();
-        
-        contenedor.innerHTML='';
-        contenedor.style.justifyContent = "left";
-        
-        for (let i = 0; i < data.length; i++) {
+
+        for (let i = 0; i < 5; i++) {
             var contenido = document.createElement("article");
             contenido.innerHTML = `
                 <h6>${data[i].name}</h6>
