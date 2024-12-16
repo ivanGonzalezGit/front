@@ -15,7 +15,7 @@ main {
     display: grid;
     width: 100%;
     height: auto;
-    grid-template-columns: 50px 100px 200px 200px 200px;
+    grid-template-columns: 70px auto auto auto auto auto auto;
     grid-template-rows: auto;
     text-align: center;
 }
@@ -31,4 +31,12 @@ main {
     border: 1px solid #e74848;
     background-color: #eb5b5b;
     border-radius: 5px;
+}
+
+.cdad{
+    width: 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    color: black;
+    background-color:thistle;
 }

@@ -9,7 +9,8 @@ function agregarProducto(event)
     img: event.target.getAttribute('data-img'),
     nombre: event.target.getAttribute('data-nombre'),
     precio: event.target.getAttribute('data-precio'),
-    cargado: event.target.getAttribute('data-cargadoAlCarrito')
+    cargado: event.target.getAttribute('data-cargadoAlCarrito'),
+    cdad: "1"
   };
 
   if(producto.cargado == "0")
@@ -44,7 +45,7 @@ async function cargarGaleria() {
         for (let i = 0; i < 5; i++) {
             var contenido = document.createElement("article");
             contenido.innerHTML = `
-                <h6>${data[i].name}</h6>
+                <h6>${data[i].title.substring(0,18)}</h6>
                 <img src="${data[i].image}" alt="Foto Producto ${i}" />
                 <div class="precio">
                     <span>Precio</span>
@@ -53,7 +54,7 @@ async function cargarGaleria() {
                 <button class="agregarAlCarrito" onclick="agregarProducto(event)"
                     data-id="${data[i].id}"
                     data-img="${data[i].image}"
-                    data-nombre="${data[i].name}"
+                    data-nombre="${data[i].title.substring(0,10)}"
                     data-precio="${data[i].price}"
                     data-cargadoAlCarrito="0">Agregar al carrito
                 </button>`;

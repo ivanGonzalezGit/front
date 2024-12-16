@@ -16,9 +16,11 @@ function encabezadoDeGrilla()
     var carrito = document.createElement("div");
     carrito.className="grid-container";
     carrito.innerHTML= `
-                        <div class="grid-item"><b>Id</b></div>
                         <div class="grid-item"><b>Imágen</b></div>
                         <div class="grid-item"><b>Nombre</b></div>
+                        <div class="grid-item"><b></b></div>
+                        <div class="grid-item"><b>cdad</b></div>
+                        <div class="grid-item"><b></b></div>
                         <div class="grid-item"><b>Precio</b></div>
                         <div class="grid-item"></div>`;
     contenedorCarrito.appendChild(carrito);
@@ -35,10 +37,12 @@ function mostrarItemCarrito()
         var itemCarrito = document.createElement("div");
         itemCarrito.className = "grid-container";
         itemCarrito.innerHTML = `
-            <div class="grid-item">${carrito[i].id}</div>
             <div class="grid-item"><img src="${carrito[i].img}"></div>
             <div class="grid-item">${carrito[i].nombre}</div>
-            <div class="grid-item">$${carrito[i].precio}</div>
+            <div class="grid-item"><b><button onclick="decrementarCdad('${carrito[i].id}')" class="cdad">-</button></b></div>
+            <div class="grid-item">${carrito[i].cdad}</div>
+            <div class="grid-item"><b><button onclick="incrementarCdad('${carrito[i].id}')" class="cdad">+</button></b></div>
+            <div class="grid-item">$${carrito[i].precio*carrito[i].cdad}</div>
             <div class="grid-item"><button onclick="quitarProducto('${carrito[i].id}')" class="quitar">Quitar</button></div>`;
         contenedorCarrito.appendChild(itemCarrito);
     }
@@ -51,7 +55,7 @@ function totalPrecio()
 
     for( let i=0; i<carrito.length; i++)
     {
-        precioTotal = precioTotal + parseFloat(carrito[i].precio);
+        precioTotal = precioTotal + parseFloat(carrito[i].precio*carrito[i].cdad);
     }
     var precioTotalTruncado = truncarDec(precioTotal);
     var contenedorCarrito = document.getElementById("cargadorGrillaCarrito");
@@ -61,7 +65,7 @@ function totalPrecio()
                             <div class="grid-item"></div>
                             <div class="grid-item"><b>Precio Total</b></div>
                             <div class="grid-item"><b>$${precioTotalTruncado}</b></div>
-                            <div class="grid-item"><button class="navButtons">Comprar</button><button onclick="vaciarCarrito()" class="quitar">Vaciar Carrito</button></div>`;
+                            <div class="grid-item"><button onclick="comprar()" class="navButtons">Comprar</button><button onclick="vaciarCarrito()" class="quitar">Vaciar Carrito</button></div>`;
 
     contenedorCarrito.appendChild(totalCarrito);
 }
@@ -76,6 +80,42 @@ function vaciarCarrito()
     localStorage.clear();
     const carritoContainer = document.getElementById("cargadorGrillaCarrito");
     carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+}
+
+function incrementarCdad(id)
+{
+    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.forEach(element => {
+        if (element.id == id)
+        {
+            element.cdad++;       
+        }
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    mostrarItemCarrito();
+    totalPrecio();
+    });
+}
+
+function decrementarCdad(id)
+{
+    var carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.forEach(element => {
+        if (element.id == id)
+        {
+            if (element.cdad>1)
+            {
+                element.cdad--; 
+            }
+        }
+    localStorage.setItem('carrito', JSON.stringify(carrito)); 
+    mostrarItemCarrito();
+    totalPrecio();
+    })
+}
+
+function comprar()
+{
+    alert('La compra se realizó con éxito');
 }
 
 window.addEventListener('load', () => {
