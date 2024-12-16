@@ -9,7 +9,6 @@ encabezado.innerHTML= ` <header>
                         <div id="botonesNav">
                             <button id="cerrarMenuVertical" class="navButtons" onclick="recomponerHamburguesa()">X</button>
                             <div class="navButtons"><a href="index.html">Inicio</a></div>
-                            <div class="navButtons"><a href="productos.html">Productos</a></div>
                             <div class="navButtons"><a href="resenia.html">Reseña</a></div>
                             <div class="navButtons"><a href="formulario.html">Contacto</a></div>
                             <div class="navButtons"><a href="carrito.html">Carrito</a></div>

@@ -42,7 +42,7 @@ async function cargarGaleria() {
         contenedor.innerHTML='';
         contenedor.style.justifyContent = "left";
         
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < data.length; i++) {
             var contenido = document.createElement("article");
             contenido.innerHTML = `
                 <h6>${data[i].title.substring(0,18)}</h6>
@@ -58,6 +58,8 @@ async function cargarGaleria() {
                     data-precio="${data[i].price}"
                     data-cargadoAlCarrito="0">Agregar al carrito
                 </button>`;
+            contenido.style.margin = "15px";
+            contenido.style.marginBottom = "30px";
             contenedor.appendChild(contenido);
         }
 
