@@ -18,5 +18,5 @@ fetch('https://fakestoreapi.com/products')
 
     })
     .catch(error => {
-        alert('Se produjo un error de conexión: ', error);
+        alert('Se produjo un error de conexión: ' + error);
     });
