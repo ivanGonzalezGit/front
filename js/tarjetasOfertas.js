@@ -66,7 +66,7 @@ async function cargarGaleria() {
         comparacion();
 
     } catch (error) {
-        alert('Se produjo un error de conexión: ', error);
+        alert('Se produjo un error de conexión: ' + error);
     }
 }
 
